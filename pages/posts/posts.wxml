@@ -1,0 +1,34 @@
+<view>
+  <swiper indicator-dots="{{ true }}" interval="3000" circular="{{ true }}" autoplay="{{ true }}">
+    <swiper-item>
+      <image src="/images/bestplayers.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/jumpfly.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/lpl.png"></image>
+    </swiper-item>
+  </swiper>
+  <view class="posts">
+    <view class="posts-container" wx:for="{{ postList }}" wx:key="postId">
+      <view class="post-author-date">
+        <image src="{{ item.avatar }}" class="post-author"></image>
+        <text class="post-date">{{ item.date }}</text>
+      </view>
+      <text class="post-title">
+        {{ item.title }}
+      </text>
+      <image src="{{ item.imgSrc}}" class="post-image"></image>
+      <text class="post-content">
+        {{ item.conent }}
+      </text>
+      <view class="post-like">
+        <l-icon name="favor" size="28" color="#666" class="post-like-image"/>
+        <text class="post-like-font">{{ item.collection }}</text>
+        <l-icon size="32" name="eye" color="#666" class="post-like-image"/>
+        <text class="post-like-font">{{ item.reading }}</text>
+      </view>
+    </view>
+  </view>
+</view>
